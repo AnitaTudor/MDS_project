@@ -15,9 +15,24 @@ var inputHandler = function(event) {
     link_to_job_hipo.innerHTML = "Hipo search result";
     link_to_job_hipo.href = 'https://www.hipo.ro/locuri-de-munca/cautajob/Toate-Domeniile/Toate-Orasele/' + event.target.value;
 
+    var link_to_job_ejobs = document.createElement("a");
+    link_to_job_ejobs.style.display = "block";
+    jobs_found.appendChild(link_to_job_ejobs);
+    link_to_job_ejobs.innerHTML = "Ejobs search result";
+    link_to_job_ejobs.href = 'https://www.ejobs.ro/locuri-de-munca/bucuresti/?cauta=' + event.target.value;
+
+    var link_to_job_myjob = document.createElement("a");
+    link_to_job_myjob.style.display = "block";
+    jobs_found.appendChild(link_to_job_myjob);
+    link_to_job_myjob.innerHTML = "Myjobs search result";
+    link_to_job_myjob.href = 'https://www.myjob.ro/locuri-munca-' + event.target.value + '/';
 
 
-
+    var link_to_job_jobber = document.createElement("a");
+    link_to_job_jobber.style.display = "block";
+    jobs_found.appendChild(link_to_job_jobber);
+    link_to_job_jobber.innerHTML = "Jobber search result";
+    link_to_job_jobber.href = 'https://www.jobber.ro/cautare/' + event.target.value;
 
 }
 

@@ -1,0 +1,29 @@
+<head>
+
+    <link type="text/css" rel="stylesheet" href="../css/header.css" />
+
+</head>
+<div class="logo-self-link-click">
+    <div class="logo">
+        <a href="/">
+            <img src="../images/JO_logo.png" alt="Job Overflow" title="Job Overflow" width="90" height="90" class="logo-self-link">
+        </a>
+    </div>
+</div>
+
+<div class="login">
+    <a href="/login">Login
+    </a>
+</div>
+
+<div class="register">Register
+    <a href="/register">
+
+    </a>
+</div>
+
+<div>
+    <% if(locals.user){ %>
+        <a href="/logout">Logout</a>
+        <% } %>
+</div>

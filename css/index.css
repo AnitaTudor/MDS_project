@@ -2,3 +2,8 @@ body {
     padding: 0;
     margin: 0;
 }
+
+.main-content {
+    padding-left: 10%;
+    padding-right: 5%;
+}

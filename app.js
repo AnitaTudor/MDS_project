@@ -72,3 +72,22 @@ app.post('/login', function(req, res) {
 
 
 });
+
+
+app.use('/css', express.static('css'));
+app.use('/images', express.static('images'));
+app.use('/videos', express.static('videos'));
+app.use('/fonts', express.static('fonts'));
+app.use('/json_data_files', express.static('json_data_files'));
+app.use('/js_scripts', express.static('js_scripts'));
+app.use('/XML_data', express.static('XML_data'));
+
+app.use(function(req, res, next) {
+    res.status(404).send("ERROR 404. You are looking in the wrong place!")
+});
+
+
+
+
+app.listen(1111);
+console.log('Port open at 1111.');

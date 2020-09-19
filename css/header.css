@@ -1,0 +1,32 @@
+.header {
+    background-color: lightgray;
+    height: 1%;
+    border-bottom: 2px solid;
+}
+
+.header .gradient-style-bottom-border {
+    list-style: none;
+    width: 100%;
+    font-size: 0;
+}
+
+.yellow {
+    background-color: lightyellow;
+}
+
+.green {
+    background-color: lightgreen;
+}
+
+.blue {
+    background-color: lightskyblue;
+}
+
+.red {
+    background-color: lightcoral;
+}
+
+.logo-self-link {
+    width: 3%;
+    height: 3%;
+}

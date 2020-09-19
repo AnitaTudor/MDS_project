@@ -25,6 +25,7 @@
         "file-system": "^2.2.2",
         "formidable": "^1.2.2",
         "fs": "0.0.1-security",
+        "nodemailer": "^6.4.11",
         "request": "^2.88.2"
     }
 }

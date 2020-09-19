@@ -23,19 +23,19 @@
 
 
     <div class="user-credentials">
-        <div class="login">
+
+        <div class="logout">
+            <% if(locals.user){ %>
+                <a href="/logout">Logout</a>
+                <% } %>
+        </div>
+        <div class="login-link">
             <a href="/login">Login </a>
         </div>
 
         <div class="register">
             <a href="/register">Register</a>
             </a>
-        </div>
-
-        <div>
-            <% if(locals.user){ %>
-                <a href="/logout">Logout</a>
-                <% } %>
         </div>
 
     </div>

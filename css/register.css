@@ -1,0 +1,45 @@
+body {
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+
+.register-username {
+    display: block;
+    width: 30%;
+    height: 30%;
+    padding: 5px 2px;
+    border-radius: 4px;
+}
+
+.submit {
+    width: 31%;
+    padding: 5px 2px;
+    border-radius: 4px;
+    background-color: green;
+}
+
+.register-pass {
+    display: block;
+    width: 30%;
+    height: 30%;
+    padding: 5px 2px;
+    border-radius: 4px;
+}
+
+label {
+    font-size: 35px;
+}
+
+.register-form {
+    padding-top: 15%;
+    padding-left: 40%;
+}
+
+.register-mail {
+    display: block;
+    width: 30%;
+    height: 30%;
+    padding: 5px 2px;
+    border-radius: 4px;
+}

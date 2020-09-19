@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    <meta name="description" content="job search engine">
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="../css/register.css" />
+    <title>
+        Job Overflow
+    </title>
+
+</head>
+
+<body>
+
+    <header class="top-side-header">
+        <%-  include ("../fragments/header") %>
+    </header>
+
+    <div class="register-form">
+        <form id="login" method="post">
+            <label class="username-regsiter">
+    Username: <input type="text" name="username" value="" placeholder="Enter Username" class="register-username">
+        </label>
+            <label class="passwoerd-register">
+    Parola: <input type="password" name="parola" value="" placeholder="Enter Password" class="register-pass">
+        </label>
+            </label>
+            <label class="email register">
+    email: <input type="text" name="email" value="" placeholder="Enter Email" class="register-mail">
+        </label>
+            <input type="submit" value="Submit" class="submit">
+        </form>
+    </div>
+
+
+</body>
+
+</html>

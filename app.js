@@ -8,6 +8,9 @@ const session = require('express-session')
 const formidable = require('formidable');
 const fs = require('fs');
 const crypto = require('crypto');
+const nodemailer = require("nodemailer");
+
+
 // pentru folosirea ejs-ului 
 app.set('view engine', 'ejs');
 
@@ -18,6 +21,7 @@ app.get('/', function(req, res) {
 
     res.render('html/index');
 });
+
 
 
 app.use(session({
@@ -44,6 +48,16 @@ function saveJson(obJson, numeFis) {
 }
 
 
+app.get('/login', function(req, res) {
+    /* render page from ejs when a GET request is made to the resto druid class guide*/
+    res.render('html/login');
+});
+
+app.get('/logout', function(req, res) {
+    req.session.destroy(); //distrug sesiunea cand se intra pe pagina de logout
+    res.render('html/index');
+    // console.log("session destroyed");
+});
 
 app.post('/login', function(req, res) {
     var form = new formidable.IncomingForm();
@@ -67,12 +81,68 @@ app.post('/login', function(req, res) {
 
         console.log(req.session.username);
         /*afiseaza(render) pagina folosind ejs (deoarece este setat ca view engine) */
-        res.render('html/login', { user: req.session.username });
+        if (user)
+            res.render('html/index', { user: req.session.username });
+        else
+            res.render('html/login', { user: req.session.username });
     });
 
 
 });
 
+
+app.get('/register', function(req, res) {
+    res.render('html/register', { user: req.session.username });
+});
+
+app.post('/register', (req, res) => {
+    //var  dateForm = req.body;
+    var form = new formidable.IncomingForm();
+    form.parse(req, function(err, fields, files) {
+
+        let rawdata = fs.readFileSync('useri.json');
+        let jsfis = JSON.parse(rawdata);
+        var cifru = crypto.createCipher('aes-128-cbc', 'mypassword');
+        var encrParola = cifru.update(fields.parola, 'utf8', 'hex');
+        encrParola += cifru.final('hex');
+        console.log(fields.parola + " " + encrParola);
+        jsfis.useri.push({ id: jsfis.lastId, username: fields.username, nume: fields.nume, email: fields.email, parola: encrParola, dataInreg: new Date(), rol: 'prof', materii: fields.materii });
+        jsfis.lastId++;
+        res.render('html/register', { user: req.session.username, rsstatus: "ok" });
+
+        saveJson(jsfis, 'useri.json')
+        trimiteMail(fields.username, fields.email).catch((err) => { console.log(err) })
+    });
+
+});
+
+
+
+async function trimiteMail(username, email) {
+    let transporter = nodemailer.createTransport({
+        service: 'gmail',
+
+        secure: false,
+        auth: {
+            user: "thrawaacc112@gmail.com", //mailul site-ului (de aici se trimite catre user)
+            pass: "nuoiei112"
+        },
+        tls: {
+            rejectUnauthorized: false //pentru gmail
+        }
+    });
+
+    //trimitere mail
+    let info = await transporter.sendMail({
+        from: '"jobs.overflow.test" <joboverflowtest@example.com>',
+        to: email,
+        subject: "User nou",
+        text: "salut, " + username,
+        html: "<p>salut, " + username + "</p>"
+    });
+
+    console.log("Message sent: %s", info.messageId);
+}
 
 app.use('/css', express.static('css'));
 app.use('/images', express.static('images'));

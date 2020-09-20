@@ -91,6 +91,28 @@ app.post('/login', function(req, res) {
 });
 
 
+app.get('/upload_cv', function(req, res) {
+    res.render('html/upload_cv', { user: req.session.username });
+});
+
+app.post('/upload_cv', function(req, res) {
+
+    var form = new formidable.IncomingForm();
+    form.parse(req, function(err, fields, files) {
+        var oldpath = files.filetoupload.path;
+        console.log("test");
+        var newpath = 'C:\Users\chidosir\Desktop\tudor html\MDS_project' + files.filetoupload.name;
+        fs.rename(oldpath, newpath, function(err) {
+            if (err) throw err;
+            res.write('File uploaded and moved!');
+            res.end();
+        });
+
+    });
+
+
+});
+
 app.get('/register', function(req, res) {
     res.render('html/register', { user: req.session.username });
 });
@@ -137,8 +159,8 @@ async function trimiteMail(username, email) {
         from: '"jobs.overflow.test" <joboverflowtest@example.com>',
         to: email,
         subject: "User nou",
-        text: "salut, " + username,
-        html: "<p>salut, " + username + "</p>"
+        text: "Welcome to Job Overflow," + username,
+        html: "<p>Welcome to Job Overflow," + username + "</p>"
     });
 
     console.log("Message sent: %s", info.messageId);

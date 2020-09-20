@@ -1,7 +1,8 @@
 var inputHandler = function(event) {
 
     var jobs_found = document.createElement("div");
-    document.getElementById("main-content").appendChild(jobs_found);
+    document.getElementById("sectioned-design").appendChild(jobs_found);
+    jobs_found.classList.add("jobs-links");
 
     var link_to_job_bestjobs = document.createElement("a");
     link_to_job_bestjobs.style.display = "block";

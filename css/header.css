@@ -1,3 +1,12 @@
+@font-face {
+    font-family: main-font;
+    src: url(../fonts/Kufam-Black.ttf);
+}
+
+body {
+    font-family: main-font;
+}
+
 .header {
     background-color: white;
     display: flex;
@@ -21,19 +30,28 @@
 .user-credentials {
     display: flex;
     font-size: 20px;
-    padding-right: 5%;
+    padding-right: 7%;
 }
 
 .login-link {
     padding: 10%;
+    text-decoration: none;
+    border: 1px solid black;
+    border-radius: 3px;
+    background-color: lightgreen;
 }
 
 .register {
     padding: 10%;
+    text-decoration: none;
+    border: 1px solid black;
+    border-radius: 3px;
+    background-color: lightgreen;
 }
 
 .logout {
     padding: 10%;
+    text-decoration: none;
 }
 
 .search-job-quick {
@@ -44,4 +62,10 @@
     width: 200%;
     padding: 12px 10px;
     border-radius: 4px;
+}
+
+#login {
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
 }

@@ -1,11 +1,18 @@
+@font-face {
+    font-family: main-font;
+    src: url(../fonts/Kufam-Black.ttf);
+}
+
 body {
     padding: 0;
     margin: 0;
+    font-family: main-font;
+    font-size: 20px;
 }
 
 .main-content {
     padding-left: 10%;
-    padding-right: 5%;
+    padding-right: 3%;
 }
 
 .input-text {
@@ -30,4 +37,20 @@ input[type=submit] {
     width: 10%;
     padding: 5px 2px;
     border-radius: 4px;
+}
+
+.sectioned-design {
+    border-left: 1px solid gray;
+    padding-left: 5%;
+}
+
+a {
+    text-decoration: none;
+    padding-top: 3%;
+    font-size: 30px;
+    color: darkred;
+}
+
+.jobs-links {
+    padding-top: 5%;
 }

@@ -1,7 +1,8 @@
 var submitHandler = function() {
 
     var jobs_found = document.createElement("div");
-    document.getElementById("main-content").appendChild(jobs_found);
+    jobs_found.classList.add("jobs-links");
+    document.getElementById("sectioned-design").appendChild(jobs_found);
 
 
 

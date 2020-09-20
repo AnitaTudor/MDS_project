@@ -22,52 +22,52 @@
 
 
     <main class="main-content" id="main-content">
+        <div class="sectioned-design" id="sectioned-design">
+            <h1 class="main-page-title">Welcome to Job Overflow
+            </h1>
+            <section class="user-guide">
+                <p> Here you will find your desired jobs from across trusted and hand-picked web-sites that will help you pursuit your dream career! </p>
+                <p>Just head over to the search bar and search for your desired job. If you wish to gain more control over your search scroll down to find additional search criteria.Enjoy!</p>
+            </section>
 
-        <h1 class="main-page-title">Welcome to Job Overflow
-        </h1>
-        <section class="user-guide">
-            Here you will find your desired jobs from across trusted and hand-picked web-sites that will help you pursuit your dream career! Just head over to the search bar and search for your desired job. If you wish to gain more control over your search scroll
-            down to find additional search criteria.Enjoy!
-        </section>
+            <section class="additional-criteria">
+                Additional criteria for searching jobs!
 
-        <section class="additional-criteria">
-            Additional criteria for searching jobs!
+                <form class="search-job" id="search-job" onsubmit="return submitHandler()">
 
-            <form class="search-job" id="search-job" onsubmit="return submitHandler()">
-
-                <label>
+                    <label>
                      <input type="text" id="txt-input-job" class="input-text" name="searching" placeholder="Search Job"  value="">
                     </label>
 
-                <label>
+                    <label>
                         <input type="text" id="txt-input-city" class="input-text" name="searching" placeholder="Town/Country"  value="">
                        </label>
 
-                <div class="job-type">Tip Job
-                    <input type="radio" id="radio-input-type-full" name="type" value="full-time">
-                    <label for="full-time">Full Time</label>
-                    <input type="radio" id="radio-input-type-part" name="type" value="part-time">
-                    <label for="part-time">Part Time</label>
-                    <input type="radio" id="radio-input-type-project" name="type" value="proiect">
-                    <label for="proiect">Project</label>
-                </div>
+                    <div class="job-type">Tip Job
+                        <input type="radio" id="radio-input-type-full" name="type" value="full-time">
+                        <label for="full-time">Full Time</label>
+                        <input type="radio" id="radio-input-type-part" name="type" value="part-time">
+                        <label for="part-time">Part Time</label>
+                        <input type="radio" id="radio-input-type-project" name="type" value="proiect">
+                        <label for="proiect">Project</label>
+                    </div>
 
-                <div class="job-experience-div">Experience
-                    <input type="radio" id="radio-input-type-noexp" name="exp" value="no-experience">
-                    <label for="no-experience">No experience</label>
-                    <input type="radio" id="radio-input-type-entry" name="exp" value="entry-level">
-                    <label for="entry-level">Entry Level (Less than 2 years)</label>
-                    <input type="radio" id="radio-input-type-mid" name="exp" value="mid-level">
-                    <label for="mid-level">Mid level( Two to Five years)</label>
-                    <input type="radio" id="radio-input-type-senior" name="exp" value="senior-level">
-                    <label for="senior-level">Senior level( More than Five years)</label>
-                </div>
+                    <div class="job-experience-div">Experience
+                        <input type="radio" id="radio-input-type-noexp" name="exp" value="no-experience">
+                        <label for="no-experience">No experience</label>
+                        <input type="radio" id="radio-input-type-entry" name="exp" value="entry-level">
+                        <label for="entry-level">Entry Level (Less than 2 years)</label>
+                        <input type="radio" id="radio-input-type-mid" name="exp" value="mid-level">
+                        <label for="mid-level">Mid level( Two to Five years)</label>
+                        <input type="radio" id="radio-input-type-senior" name="exp" value="senior-level">
+                        <label for="senior-level">Senior level( More than Five years)</label>
+                    </div>
 
-                <button type="submit" class="submit-button">Submit search</button>
-            </form>
+                    <button type="submit" class="submit-button">Submit search</button>
+                </form>
 
-        </section>
-
+            </section>
+        </div>
     </main>
 
 

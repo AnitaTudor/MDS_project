@@ -8,3 +8,4 @@ Job searching engine that gathers info from multiple approved sources to give th
 # 3.Source control-10 comits, un merge din branchul dev cu master folosind gitbash deschis in folderul proiectului
 # 4.teste automata-in progress, folosind mocha module din node
 # 5.build tool-npm windows pentru instalarea modulelor, rularea serverului local, organizarea fisirelor cu node module express
+# bug reporting in https://github.com/AnitaTudor/MDS_project/projects/1 la done. era mentionat un bug care cauza probleme cu regula css aplicata la design
